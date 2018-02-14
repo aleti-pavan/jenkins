@@ -1,3 +1,3 @@
 node {
-   echo 'Hi from GitHub'
+   echo '1Hi from GitHub'
 }
