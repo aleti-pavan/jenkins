@@ -1,8 +1,11 @@
+variable "access_key"{}
+variable "secret_key"{}
+
+
 provider "aws" {
   region = "eu-west-2"
-  access_key = ${env.AWS_ACCESS_KEY_ID}
-  secret_key = ${env.AWS_SECRET_ACCESS_KEY}
-
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
 }
 
 data "aws_ami" "ubuntu" {
@@ -29,3 +32,4 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
