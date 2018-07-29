@@ -22,7 +22,7 @@ pipeline {
                 sh 'sudo cp /home/ec2-user/vars.tf ./jenkins/'
             }
         }
-        stage('Terraform init') {
+        stage('terraform init') {
             steps {
                 sh 'sudo /home/ec2-user/terraform init ./jenkins'
             }
