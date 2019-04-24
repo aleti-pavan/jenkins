@@ -17,11 +17,6 @@ pipeline {
                 sh 'sudo rm -r *;sudo git clone https://github.com/aleti-pavan/jenkins.git'
             }
         }
-        stage('tfsvars create'){
-            steps {
-                sh 'sudo cp /home/ec2-user/vars.tf ./jenkins/'
-            }
-        }
         stage('terraform init') {
             steps {
                 sh 'sudo /home/ec2-user/terraform init ./jenkins'
