@@ -15,4 +15,17 @@ Usage:
 
 I have updated the repo with ReadMe and also with vars.tf to make it more sense as more people pinging me and asking me in detail. Hope this readme would throw some insight. 
 
+
+Improvements:
+------------
+
+You can use below commands to plan and apply terraform. You can have them in different stages within Jenkinsfile
+
+$ terraform plan
+$ terraform apply -auto-approve
+
+Once this is successful at any time if you want to remove the provisioned instance. Execute below command on the jenkins server as jenkins user
+
+$ terraform destroy -auto-approve
+
 #Cheers - Pavan Kumar Aleti
