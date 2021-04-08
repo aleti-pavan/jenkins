@@ -17,9 +17,21 @@ pipeline {
                 sh 'sudo rm -r *;sudo git clone https://github.com/sabavnk/jenkins.git'
             }
         }
-        
+        stage('terraform init') {
+            steps {
+                sh 'sudo /home/ubuntu/ terraform init ./jenkins'
+                sh 'pwd'
+            }
         }
-
-        
+        stage('terraform plan') {
+            steps {
+                sh 'ls ./jenkins; sudo /home/ubuntu/ terraform plan ./jenkins'
+            }
+        }
+        stage('terraform ended') {
+            steps {
+                sh 'echo "Ended.......!!"'
+            }
+        }
     }
 }
