@@ -14,12 +14,12 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo git clone https://github.com/sabavnk/jenkins.git'
+                sh 'sudo rm -r *;sudo git clone https://github.com/sabavnk/jenkins.git'
             }
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /home/ubuntu/ terraform init ./jenkins'
+                sh 'sudo /var/lib/jenkins/workspace/terraform2 terraform init ./jenkins'
                 sh 'pwd'
             }
         }
