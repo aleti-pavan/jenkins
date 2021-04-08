@@ -12,9 +12,9 @@ pipeline {
                 sh 'echo "Started...!" '
             }
         }
-        stage('git clone') {
+        stage('git checkout') {
             steps {
-                sh 'sudo rm -r *;sudo git clone https://github.com/sabavnk/jenkins.git'
+                git credentialsId: 'GIT', url: 'https://github.com/sabavnk/jenkins.git'
             }
         }
         stage('terraform init') {
